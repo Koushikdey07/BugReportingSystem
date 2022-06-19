@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        body{
+            background: url([[@{/images/background/tlead.jpg}]])
+                            no-repeat center center fixed;
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+        }
+        .button1 {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .button1:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Reporting Platform</title>
+</head>
+<body>
+    <header id="hostTag3" th:include="/tlead/tlNav::div1"></header>
+    <h1 style="color: aliceblue; padding: 30px; margin: inherit; text-align: center;">Assign Developer</h1>
+    <form style="text-align: center;" method="post" th:action="@{/tlead/updateDev/{id}(id=${bugReport.id})}" class="register-form" id="register-form" th:object="${bugReport}">
+        <div class="container" style="text-align: center">
+            <input type="hidden" id="bugID" th:field="${bugReport.id}" name="bugID"  style="height: 20px;width: 210px; text-align: center;"><br><br>
+            <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Bug Summary</label><br><br>
+            <input type="text" id="bugSummary" th:attr="value = ${bugReport.bugSummary}" name="bugSummary" style="height: 20px;width: 210px; text-align: center;"><br><br>
+            <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Bug Description</label><br><br>
+            <input type="text" id="bugDescription" th:attr="value = ${bugReport.bugDescription}" name="bugDescription" style="height: 20px;width: 210px; text-align: center;"><br><br>
+            <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Product</label><br><br>
+            <input type="text" id="product" th:attr="value = ${bugReport.product}" name="product" style="height: 20px;width: 210px; text-align: center;"><br><br>
+            <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Platform</label><br><br>
+            <input type="text" id="platform" th:attr="value = ${bugReport.platform}" name="platform" style="height: 20px;width: 210px; text-align: center;"><br><br>
+            <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Assign Developer</label><br><br>
+            <select name="empId" id="empId" th:field="*{emp}" style="padding: 5px; width: 220px;">
+                <option th:each="emp:${empList}" th:value="${emp.id}",  th:text="${emp.name}" ></option>
+            </select><br><br>
+
+            <br><br>
+            <button class="button1" type="submit" value="Submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

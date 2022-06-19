@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Satisfy&display=swap');
+        body{
+            background: url([[@{/images/background/dev.jpg}]])
+                            no-repeat center center fixed;
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bug Reporting Platform</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<!--start #header-->
+<header id="hostTag2" th:include="/dev/devNav::div2"></header>
+<!-- !start #header-->
+
+<div class="jumbotron text-center" style="margin: 20px 400px; background-color: #333; color: white;">
+    <h1 class="display-2" style= "font-family: 'Dancing Script', cursive;">Welcome <b>[[${#request.userPrincipal.principal.name}]]</b></h1>
+</div>
+</body>
+</html>

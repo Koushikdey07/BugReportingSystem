@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Navigation</title>
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css">
+</head>
+<body>
+<!--start #header-->
+<header id="fragmentTag4" th:fragment="div1">
+    <nav  class="navbar navbar-expand-lg navbar-dark color-second-bg" style="justify-content:space-between;" >
+        <div class="container-fluid">
+            <a class="navbar-brand">Online Bug Reporting Platform</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/admin/home}" href="/templates/admin/home.html">Admin-Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/logout}" href="/templates/admin/login.html">Logout</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- !start #header-->
+</body>
+</html>

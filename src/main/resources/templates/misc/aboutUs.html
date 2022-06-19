@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Reporting Platform</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/vendor/splide.min.css}" href="../static/vendor/splide.min.css">
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css">
+</head>
+
+<body>
+<!--start #header-->
+<header id="hostTag" th:include="/misc/header::header"></header>
+<!-- !start #header-->
+
+<!--start #main-site-->
+<main id="main-site">
+    <div class="mb-1 jumbotron text-center" style="background-color:#b5e48c;">
+        <h1 class="p-3 display-5">
+            <mark>About Us</mark>
+        </h1>
+        <p>A bug reporting system is a software application that is designed to help programmers to keep track of
+            reported software bugs in their work.
+            A major component of bug reporting system is a database that records facts and known bugs submitted by the
+            tester.
+            Bug Reporting System is an ideal solution to track the bugs of a product, solution or an application.
+            Bug Reporting System allows individual or groups of developers to keep track of outstanding bugs in their
+            product effectively.</p>
+    </div>
+    <!--Group Members-->
+    <div class="mb-1 container text-center" style="background-color:#bdb2ff;">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" role="listbox">
+            <h3 class="mbr-section-title pb-3 mbr-fonts-style display-3">User Testimonials</h3>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="p-3 d-flex justify-content-center">
+                        <img th:src="@{/images/members/1.png}" src="/static/images/members/1.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </div>
+                    <p>Goody boy.</p>
+                    <h5><strong>Koushik</strong></h5>
+                    <p>Developer</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="p-3 d-flex justify-content-center">
+                        <img th:src="@{/images/members/2.png}" src="/static/images/members/2.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </div>
+                    <p>Goody girl.</p>
+                    <h5><strong>Shankhapriya</strong></h5>
+                    <p>Designer</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="p-3 d-flex justify-content-center">
+                        <img th:src="@{/images/members/3.png}" src="/static/images/members/3.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </div>
+                    <p>Goody girl.</p>
+                    <h5><strong>Debdatta</strong></h5>
+                    <p>Designer</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="p-3 d-flex justify-content-center">
+                        <img th:src="@{/images/members/4.png}" src="/static/images/members/4.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </div>
+                    <p>Goody boy.</p>
+                    <h5><strong>Snehasish</strong></h5>
+                    <p>Developer</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="p-3 d-flex justify-content-center">
+                        <img th:src="@{/images/members/5.png}" src="/static/images/members/5.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </div>
+                    <p>Goody girl.</p>
+                    <h5><strong>Nilanjana</strong></h5>
+                    <p>Designer</p>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <section class="splide mb-1 text-center" aria-label="Slide Container Example" style="background-color:#ffcdb2;">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="col-12 align-center">
+                    <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2">
+                        Our Clients
+                    </h2>
+                    <h3 class="mbr-section-subtitle mbr-light mbr-fonts-style display-5">Thank you for choosing us!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/1.png}" src="/static/images/client/1.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/2.png}" src="/static/images/client/2.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/3.png}" src="/static/images/client/3.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/4.png}" src="/static/images/client/4.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/5.png}" src="/static/images/client/5.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/6.png}" src="/static/images/client/6.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/7.png}" src="/static/images/client/7.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/8.png}" src="/static/images/client/8.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/9.png}" src="/static/images/client/9.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                    <li class="splide__slide">
+                        <img th:src="@{/images/client/10.png}" src="/static/images/client/10.png" class="align-middle"
+                             alt="Error" style="width:250px;height:250px">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- !start #main-site-->
+<!--start #footer-->
+<footer>
+    <footer id="footer" class="bg-dark text-white py-5">
+        <section class="mbr-section form1 cid-qyvf9K0GGo" id="form1-4" data-rv-view="791">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="title text-center col-12 col-lg-8">
+                        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">CONTACT US</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="media-container-column col-lg-8" data-form-type="formoid">
+                        <div data-form-alert="" hidden="">
+                            Thanks for filling out the form!
+                        </div>
+                        <form class="mbr-form" action="" method="post" data-form-title=""><input type="hidden"
+                                                                                                 data-form-email="true"
+                                                                                                 value="">
+                            <div class="row row-sm-offset">
+                                <div class="col-md-4 multi-horizontal" data-for="name">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-4">Name</label>
+                                        <input type="text" class="form-control" name="name" data-form-field="Name"
+                                               required="" id="name-form1-4">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 multi-horizontal" data-for="email">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-7" for="email-form1-4">Email</label>
+                                        <input type="email" class="form-control" name="email" data-form-field="Email"
+                                               required="" id="email-form1-4">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 multi-horizontal" data-for="phone">
+                                    <div class="form-group">
+                                        <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-4">Phone</label>
+                                        <input type="tel" class="form-control" name="phone" data-form-field="Phone"
+                                               id="phone-form1-4">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" data-for="message">
+                                <label class="form-control-label mbr-fonts-style display-7" for="message-form1-4">Message</label>
+                                <textarea type="text" class="form-control" name="message" rows="7"
+                                          data-form-field="Message" id="message-form1-4"></textarea>
+                            </div>
+                            <span class="input-group-btn"><button href="" type="submit" class="btn btn-primary mb-2"
+                                                                  style="display:block;margin-left:auto;margin-right:auto;">SEND FORM</button></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</footer>
+<div class="copyright text-center bg-dark text-white py-2">
+    <p class="font-rale font-size-14">&copy; Copyrights 2022. Design By <a href="#" class="color-second">Snehasish
+        Mondal</a></p>
+</div>
+<!-- !start #footer-->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+<!-- Custom Javascript -->
+<script type="text/javascript" th:src="@{/js/splide.min.js}" src="../static/js/splide.min.js"></script>
+<script defer>
+    console.log("asd")
+    new Splide( '.splide', {
+      type   : 'loop',
+      perPage: 4,
+      focus  : 'center',
+      gap: '.5rem',
+      breakpoints: {
+        640: {
+          height: '6rem',
+        },
+      },
+    } ).mount() ;
+
+</script>
+</body>
+
+</html>

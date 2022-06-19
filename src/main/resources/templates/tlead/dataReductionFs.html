@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        body{
+            background: url([[@{/images/background/tlead.jpg}]])
+                            no-repeat center center fixed;
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+       }
+    </style>
+    <title>Bug Reporting Platform</title>
+</head>
+<body>
+    <header id="hostTag3" th:include="/tlead/tlNav::div1"></header>
+    <h1 style="color: aliceblue; padding: 70px; margin: inherit; text-align: center;">Search Bug Report Based on Feature Selection</h1>
+    <h1 th:text="${msg}" style="color: aliceblue; padding: 70px; margin: inherit; text-align: center;"></h1>
+    <table style="color: red";>
+        <tr>
+            <th>BugId</th>
+            <th>Summary</th>
+            <th>Status</th>
+            <th>Developer</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="data : ${searchedData}">
+            <th th:text="${data.id}">1</th>
+            <td th:text="${data.bugSummary}">Null Pointer</td>
+            <td th:text="${data?.emp?.name} ?: 'Not Assigned'">Not Assigned</td>
+            <td th:text="${data.action}">Not Assigned</td>
+
+
+            <td><a type="submit" th:href="@{/tlead/analyse}">Check</a></td>
+        </tr>
+    </table>    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body{
+             background: url([[@{/images/background/tlead.jpg}]])
+                            no-repeat center center fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Reporting Platform</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<!--start #header-->
+<header id="hostTag" th:include="/misc/header::header"></header>
+<!-- !start #header-->
+
+<!--start #main-site-->
+<div class="main">
+    <section class="signup">
+        <div class="container">
+            <style>
+                        .sample123{
+                            width: 100%;
+                            max-width: 1000px;
+                            margin: 0px auto;
+                            height: 100vh;
+                            padding: 2rem;
+
+                            border-radius: .5rem;
+                            }
+                            .h-custom{
+                                border-radius: 1rem;
+                                padding: 2rem;
+                                background-color: white;
+                                }
+                    </style>
+            <section class="sample123">
+                <div class="container-fluid h-custom mt-4" >
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-9 col-lg-6 col-xl-5">
+                            <img th:src="@{/images/teamLead.svg}" src="../static/images/teamLead.svg"
+                                 class="img-fluid" alt="Sample image" style="width:100%">
+                        </div>
+                        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                            <h3 class="form-title">Team Lead Login</h3>
+                            <div id="loginFragment" th:include="/commonLogin/login::loginDiv"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+<!-- !start #main-site-->
+
+<!-- MDB -->
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"
+></script>
+
+</body>
+</html>

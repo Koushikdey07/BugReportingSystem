@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Satisfy&display=swap');
+        body{
+            background: url([[@{/images/background/dev.jpg}]])
+                            no-repeat center center fixed;
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+        }
+        .button1 {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .button1:hover {
+            box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+    </style>
+    <title>Rectification Status</title>
+</head>
+<body>
+<!--start #header-->
+<header id="hostTag2" th:include="/dev/devNav::div2"></header>
+<!-- !start #header-->
+
+<h1 style="color: aliceblue; padding: 70px; margin: inherit; text-align: center;">Rectification Status</h1>
+<form style="text-align: center;" method="post" th:action="@{/dev/updateStatus/{id}(id=${id})}" th:object="${bugReport}">
+    <div class="container" style="text-align: center" th:each="bug:${dataList}">
+        <label style="color: aliceblue; margin: 10px; inline:block; width: 50px; text-align: left;" >Bug Id</label><br><br>
+        <input type="text" id="bugID" th:attr="value = ${id}" name="bugID"  style="height: 20px;width: 210px; text-align: center;"><br><br>
+        <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Bug Summary</label><br><br>
+        <input type="text" id="bugSummary" th:attr="value = ${bug.bugSummary}" name="bugSummary" style="height: 20px;width: 210px; text-align: center;"><br><br>
+        <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Product</label><br><br>
+        <input type="text" id="product" th:attr="value = ${bug.product}" name="product" style="height: 20px;width: 210px; text-align: center;"><br><br>
+        <label style="color: aliceblue; padding: 10px; inline:block; width: 50px; text-align: left;" >Platform</label><br><br>
+        <input type="text" id="platform" th:attr="value = ${bug.platform}" name="platform" style="height: 20px;width: 210px; text-align: center;"><br><br>
+
+        <select name="action" id="action" style="padding: 5px; width: 220px;">
+            <option value="choose">Select Status</option>
+            <option th:each="s:${statusList}" th:value="${s}" th:text="${s}"></option>
+        </select><br><br>
+
+        <br><br>
+        <button class="button1" type="submit" value="Submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Lead Navigation</title>
+
+</head>
+<body>
+<!--start #header-->
+<header id="fragmentTag3" th:fragment="div1">
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #876a9e;
+            color: white;
+        }
+   </style>
+    <div class="topnav" >
+      <a class="active" href="/templates/tlead/home.html" th:href="@{/tlead/home}" >Home</a>
+      <a href="/templates/tlead/affixNew0Bugs.html" th:href="@{/tlead/report}" >Affix New Bugs</a>
+      <a href="/templates/tlead/analyseBugReport.html" th:href="@{/tlead/analyse}" >Analyse Bug Report</a>
+      <a href="/templates/tlead/dataReductionIs.html"  th:href="@{/tlead/dataIs}" >Search</a>
+      <a href="/templates/tlead/login.html" th:href="@{/logout}" >Logout</a>
+    </div>
+</header>
+<!-- !start #header-->
+
+</body>
+</html>

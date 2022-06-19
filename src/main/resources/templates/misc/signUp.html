@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Bug Reporting Platform</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" th:href="@{/signin-signup-resources/fonts/material-icon/css/material-design-iconic-font.min.css}" href="../static/signin-signup-resources/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" th:href="@{/signin-signup-resources/css/signup-signin.css}" href="../static/signin-signup-resources/css/signup-signin.css">
+
+    <style>
+        body{
+                background: url([[@{/images/background/signup.jpg}]])
+                            no-repeat center center fixed;
+        }
+        select{
+            -webkit-appearance: listbox !important
+            }
+    </style>
+</head>
+<body>
+
+<!--start #header-->
+<header id="hostTag" th:include="/misc/header::header"></header>
+<!-- !start #header-->
+
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h1 th:text="${msg}" style="color: aliceblue; padding: 70px; margin: inherit; text-align: center;"></h1>
+                    <h2 class="form-title">Developer Registration</h2>
+                    <form method="post" th:action="@{/misc/signup}" class="register-form" id="register-form" th:object="${emp}">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="name" id="name" th:field="*{name}" placeholder="Your Name" required minlength="8" maxlength="25"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" th:field="*{email}" placeholder="Your Email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="pass" th:field="*{password}" placeholder="Password" required minlength="8" maxlength="16"/>
+                        </div>
+                        <div class="form-group">
+                            <label :for="re-pass"><i class="zmdi zmdi-developer-board"></i></label>
+                            <select class="form-control" th:field="*{domain}" required>
+                                <option  value="choose">Developers Domain</option>
+                                <option th:each="d:${domainList}" th:value="${d}" th:text="${d}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date"><i class="zmdi zmdi-calendar"></i></label>
+                            <input type="text" name="date" id="date" th:field="*{doj}" placeholder="dd-mm-yyyy" required/>
+                        </div>
+                        <div class="form-group">
+                            <label :for="phone"><i class="zmdi zmdi-smartphone-android"></i></label>
+                            <input type="text" name="phoneNumber" id="phoneNumber" th:field="*{phNo}" placeholder="Phone Number" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="location"><i class="zmdi zmdi-pin"></i></label>
+                            <input type="text" name="location" id="location" th:field="*{loc}" placeholder="Location" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="register" id="register" class="form-submit" value="Register"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img th:src="@{/signin-signup-resources/images/signup-image.jpg}" src="../static/signin-signup-resources/images/signup-image.jpg" alt="sign up image"></figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- JS -->
+<script th:src="@{/signin-signup-resources/vendor/jquery/jquery.min.js}" src="../static/signin-signup-resources/vendor/jquery/jquery.min.js"></script>
+<script th:src="@{/signin-signup-resources/js/main.js}" src="../static/signin-signup-resources/js/main.js"></script>
+</body>
+</html>

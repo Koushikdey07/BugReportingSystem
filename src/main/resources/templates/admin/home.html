@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bug Reporting Platform</title>
+
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- font awesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+        <!-- Custom CSS file -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css">
+    </head>
+
+    <body>
+        <header id="hostTag4" th:include="/admin/adminNav::div1"></header>
+
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome back, Manager</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 pt-3">
+                    <div class="card" style="background-color:white;">
+                        <div class="card-body">
+                            <h4 class="card-title">Developers</h4>
+                            <p class="card-text">Manage all the developers here.</p>
+                            <a href="#" th:href="@{/admin/recruit}" class="card-link btn btn-primary">Manage</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 pt-3">
+                    <div class="card" style="background-color:white;">
+                        <div class="card-body">
+                            <h4 class="card-title">Trace History</h4>
+                            <p class="card-text">Check all the past records here.</p>
+                            <a href="#" th:href="@{/admin/trace}" class="card-link btn btn-primary">Manage</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

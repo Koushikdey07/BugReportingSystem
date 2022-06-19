@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Satisfy&display=swap');
+        body{
+            background: url([[@{/images/background/dev.jpg}]])
+                            no-repeat center center fixed;
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+       }
+    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Reporting Platform</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<!--start #header-->
+<header id="hostTag2" th:include="/dev/devNav::div2"></header>
+<!-- !start #header-->
+
+<h1 style="color: aliceblue; padding: 70px; margin: inherit; text-align: center;">Bug Report Analysis</h1>
+<div class="table-responsive">
+  <table style="color: red";>
+    <tr style="color: aliceblue;">
+      <th>BugId</th>
+      <th>Summary</th>
+      <th>Description</th>
+      <th>Platform</th>
+      <th>Product</th>
+      <th>Critical</th>
+      <th>Status</th>
+      <th>Triage</th>
+    </tr>
+    <tr th:each="bugReport : ${reports}">
+      <th th:text="${bugReport.id}">1</th>
+      <td th:text="${bugReport.bugSummary}">Null Pointer</td>
+      <td th:text="${bugReport.bugDescription}">Null pointer exception in java.</td>
+      <td th:text="${bugReport.platform}">Java and J2EE</td>
+      <td th:text="${bugReport.product}">Netbeans</td>
+      <td th:text="${bugReport.importance}">Low</td>
+      <td th:text="${bugReport.action}">Assigned</td>
+
+
+      <td><a href="" th:href="@{/dev/recStatus/{id}(id=${bugReport.id})}" >Update</a></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
